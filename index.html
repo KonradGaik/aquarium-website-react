@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUARIUM</title>
+
+    <!-- LIBRARIES -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+</head>
+<body>
+    <!-- <div id="overlay" wrapper></div> -->
+
+    <!-- loader -->
+    <div class="loading__wrapper">
+      <div class="loader">
+        <span></span>
+      </div>
+    </div>
+
+
+    <!-- LEFT FIXED SECTION -->
+      <div id="aside" class="hidden md:block w-20 z-[24]" style="transition: 1.5s;"> 
+      </div>
+      <div id="scroll-progress" class="z-[32] left-9 hidden md:block duration-1500">
+        <div id="scroll-progress-bar" class="z-[32] hidden md:block"></div>
+    </div>
+    <div id="social-media" class=" z-[32] fixed bottom-0 bg-transparent left-0 w-20 h-20">
+      <div class="flex justify-center self-center flex-col">
+      <a href="#">
+        <svg class="mx-auto mb-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="30px" height="30px">    
+          <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"/>
+        </svg>
+      </a>
+      <a href="#">
+        <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">    
+          <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"/>
+        </svg>
+      </a>
+    </div>
+    </div>
+    </div>
+
+
+
+<!-- NAVBAR -->
+    <nav id="nav" class="bg-gray-900 mx-auto fixed z-[25] h-[10-vh] py-[3vh]">
+        <div class="container items-center flex mx-auto w-100">
+          <div class="flex items-center mx-auto justify-between" id="logo">
+            <div class="block top-[35%] left-7 absolute">
+                <button id="nav-toggle" class="nav-toggle flex items-center p-1 text-white overflow-hidden">
+                    <div class="nav-toggle__icon nav-toggle__icon--closed fill-current h-6 w-6" >
+                      <span class="bar"></span>
+                      <span class="bar"></span>
+                      <span class="bar"></span>
+                    </div>
+                    <!-- <div class="nav-toggle__icon nav-toggle__icon--open fill-current h-6 w-6 hidden"><title>Close</title></div> -->
+                </button>
+              </div>
+            <h1 class="text-white flex duration-500 text-2xl sm:text-3xl" id="logo-text" style="line-height: 10vh;">Lorem ipsum</h1>
+          <img class="w-10" src="./img/aquarium.png" alt="logo" draggable="false">
+          </div>
+       
+          </div>
+        </div>
+        <div class="sidebar bg-gray-900 mt-[10vh] z-10 sm:block">
+          <ul class="flex flex-col p-10 w-100 text-center">
+            <a href="#" class="text-white uppercase hover:text-gray-500 my-5 hover:duration-700 "><li class="hover:bg-green-500 duration-500 p-5 mb-3">strona główna</li></a>
+            <a href="#" class="text-white uppercase hover:text-gray-500 my-5 hover:duration-700 "><li class="hover:bg-green-500 duration-500 p-5 mb-3">o nas</li></a>
+            <a href="#" class="text-white uppercase hover:text-gray-500 my-5 hover:duration-700 "><li class="hover:bg-green-500 duration-500 p-5 mb-3">kontakt</li></a>
+            <a href="#" class="text-white uppercase hover:text-gray-500 my-5 hover:duration-700 "><li class="hover:bg-green-500 duration-500 p-5 mb-3">akwaria</li></a>
+            <a href="#" class="text-white uppercase hover:text-gray-500 my-5 hover:duration-700 "><li class="hover:bg-green-500 duration-500 p-5 mb-3">lorem ipsum</li></a>
+          </ul>
+          <div class="flex flex-row justify-center gap-5">
+          <a class="mr-3" href="#">
+            <svg class="mx-auto mb-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="40px" height="40px">    
+              <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"/>
+            </svg>
+          </a>
+          <a class="ml-3" href="#">
+            <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="40px" height="40px">    
+              <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"/>
+            </svg>
+          </a>
+        </div>
+        </div>
+      </nav>
+  
+    <!-- HERO SECTION -->
+    <div class="z-[-60]" id="toBlurry"> 
+    <div id="hero" class="relative flex items-center justify-center h-screen overflow-hidden">
+    <video
+      autoplay
+      loop
+      muted
+      class="absolute z-[-100] w-auto min-w-full min-h-full max-w-none"
+    >
+      <source
+        src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="relative z-10 p-5 text-6xl md:text-7xl text-[#ddd] bg-opacity-50 text-center rounded-xl">
+      Lorem<br />
+      ipsum inis. <br />
+      <img style="width: 25%;" class="flex py-6 mx-auto" src="./img/aquarium.png" alt="logo akwarium" draggable="false">
+        <a href="#contact-us" class="bg-blue-500 h-full hover:bg-blue-700 text-4xl text-white py-2 px-4 border border-blue-700 rounded">
+          Zapytaj eksperta
+        </a>
+      </div>
+  </div>
+
+
+    <!-- ABOUT US SECTION -->
+    <section id="about_us" class="row w-100 md:pl-32 flex  mx-auto">
+      <div class="px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left">
+        <div class="mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+
+            <div class="mb-0">
+              <img
+                src="./img/akwarium.webp"
+                draggable="false"
+                class="w-full rounded-lg shadow-lg"
+                alt=""
+              />
+            </div>
+
+            <div class="mt-0">
+              <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold 
+              tracking-tight mb-6 overflow-hidden">Lorem ipsum dolor sie </h1>
+              <br /><span class="text-2xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi impedit assumenda ea, iste amet voluptatibus iure perspiciatis quibusdam, excepturi inventore, voluptatem obcaecati. Quidem perspiciatis quae iure asperiores in quaerat, nulla sunt labore, voluptatibus magnam officiis! Possimus rerum sapiente, eos sit molestiae praesentium cum deserunt quisquam voluptas. Debitis cupiditate eum reiciendis.</span>
+              <div class="px-10 py-6">
+              <a href="#contact-us" class="relative mx-auto  w-fit hover:scale-110 inline-flex items-center justify-start px-3 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
+                <span class="w-48 h-48 rotate-[-30deg] bg-purple-600 absolute bottom-0 left-[0] -translate-x-full ease-out duration-1000 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                <span class="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white text-5xl overflow-hidden"> Kontakt</span>
+                </a>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR AQUARIUMS SECTION carousel -->
+    <section id="our_aquariums"class="md:pl-20">
+ 
+        <div class="relative">
+          <div class="h-full bg-gray-200 h-full">
+            <h1 class="text-md md:text-4xl mx-auto flex justify-center  my-10 uppercase overflow-hidden">nasze produkty</h1>
+            <ul id="slider">
+              <li class="relative fade-in">
+                <img src="./img/akwarium.webp" alt="akwarium" class="h-full mx-auto object-cover">
+                <div class="absolute flex flex-col justify-end h-full w-full top-0">
+                <h2 class="sm:text-2xl md:text-5xl w-full my-3 text-center overflow-hidden">TEKST1 </h2>
+                <p class="sm:text-lg md:text-2xl w-[75%] mx-auto my-3 text-center">Lorem ipsum dolor sit amet consectetur adipis
+                </p>
+                <a href="#contact-us" class="text-lg md:text-2xl z-10 text-black my-10 p-2 bg-blue-200 mx-auto text-center border uppercase">skontaktuj sie z nami</a>
+              </div>
+              </li>
+
+              <li class="relative hidden">
+                <img src="./img/akwarium.webp" alt="akwarium" class="h-full mx-auto object-cover">
+                <div class="absolute flex flex-col justify-end h-full w-full top-0">
+                  <h2 class="sm:text-2xl md:text-5xl w-full my-3 text-center overflow-hidden">TEKST2 </h2>
+                  <p class="sm:text-lg md:text-2xl w-[75%] mx-auto my-3 text-center">Lorem ipsum dolor sit amet consectetur adipis
+                  </p>
+                  <a href="#contact-us" class="text-lg md:text-2xl z-10 text-black my-10 p-2 bg-blue-200 mx-auto text-center border uppercase">skontaktuj sie z nami</a>
+                </div>
+              </li>
+
+              <li class="relative hidden">
+                <img src="./img/akwarium.webp" alt="akwarium" class="h-full mx-auto object-cover">
+                <div class="absolute flex flex-col justify-end h-full w-full top-0">
+                  <h2 class="sm:text-2xl md:text-5xl w-full my-3 text-center overflow-hidden">TEKST3 </h2>
+                  <p class="sm:text-lg md:text-2xl w-[75%] mx-auto my-3 text-center">Lorem ipsum dolor sit amet consectetur adipis
+                  </p>
+                  <a href="#contact-us" class="text-lg md:text-2xl z-10 text-black my-10 p-2 bg-blue-200 mx-auto text-center border uppercase">skontaktuj sie z nami</a>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <div class="absolute px-5 flex w-full h-full top-0 left-0"> 
+            <div class="my-auto w-full flex justify-between">
+              <button onclick="prev()" class="bg-white p-4 rounded-full mx-3 bg-opacity-80">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+              </button>
+              <button onclick="next()" class="bg-white p-4 rounded-full mx-3 bg-opacity-80">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    
+  <section id="news" class="pl-[5%] z-[-50]">
+    <section id="tranding" class="">
+      <h1 class="text-md md:text-4xl mx-auto flex justify-center overflow-hidden my-12">sprawdź jak powstaja</h1>
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+             
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Oczyszczanie
+                  </h2>
+                </div>
+              </div>
+              <div class="tranding-slide-img">
+                <img src="./img/1.jpg" alt="Tranding">
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="./img/2.webp" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Kamienie z Nysy
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="./img/3.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Karma dla glonojada
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+          </div>
+
+          <div class="tranding-slider-control h-[10vh]">
+            <div class="swiper-button-prev slider-arrow">
+              <svg id="Layer_1" width="26px" height="26px" style="  transform: scaleX(-1);" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>arrow-right-glyph</title><path d="M174.54,508.94,420.1,263.39a10.74,10.74,0,0,0,0-14.75L174.53,3.06a10.43,10.43,0,0,0-14.75,0L92,70.8a10.43,10.43,0,0,0,0,14.75L262.47,256,92,426.46a10.73,10.73,0,0,0,0,14.75l67.75,67.73A10.43,10.43,0,0,0,174.54,508.94Z"/></svg>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <svg id="Layer_1" width="26px" height="26px"  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>arrow-right-glyph</title><path d="M174.54,508.94,420.1,263.39a10.74,10.74,0,0,0,0-14.75L174.53,3.06a10.43,10.43,0,0,0-14.75,0L92,70.8a10.43,10.43,0,0,0,0,14.75L262.47,256,92,426.46a10.73,10.73,0,0,0,0,14.75l67.75,67.73A10.43,10.43,0,0,0,174.54,508.94Z"/></svg>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+    </section>
+  </section>
+
+    <!-- SPECIAL SECTION -->
+    <section id="special" class="md:pl-[5%]">
+      <div class = "main-container">
+        <h2>Poznaj cały proces</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, velit.</p>
+        <div class = "filter-container ">
+            <div class = "category-head">
+              <div class="container">
+                <div class="progress-container mx-auto z-[0]">
+                    <div class="progress" id="progress"></div>
+                    <button class="category-title" type="button" id="details"><div class="circle active">1</div></button>
+                    <button class="category-title" type="button" id="pay"><div class="circle">2</div></button>
+                    <button class="category-title" type="button" id="production"><div class="circle">3</div></button>
+                    <button class="category-title" type="button" id="recieve"><div class="circle">4</div></button>
+                </div>
+            </div>
+
+                <!-- <ul>
+               
+                    <div class = "category-title active mx-auto" id = "details">
+                        <li>Szczegóły</li>
+                    </div>
+                    <div class = "category-title mx-auto" id = "pay">
+                        <li>Opłata</li>
+                    </div>
+                    <div class = "category-title mx-auto" id = "production">
+                        <li>Realizacja</li>
+                    </div>
+                    <div class = "category-title mx-auto" id = "recieve">
+                        <li>Odbiór</li>
+                    </div>
+                  
+                </ul> -->
+            </div>
+
+            <div class="posts-collect h-100 md:px-16">
+                <div class = "posts-main-container">
+
+
+                    <!-- single post -->
+                    <div class = "details all my-12">
+                      <div class = "post-img">
+                          <img src = "./img/akwarium.webp" alt = "post">
+                
+                      </div>
+
+                      <div class = "post-content mx-auto">
+                          <h2 class="text-center">Szczegoly</h2>
+                      </div>
+                      <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                  </div>
+
+                    <!-- single post -->
+                    <div class = "details all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                  
+                        </div>
+
+                        <div class = "post-content">
+                          <h2 class="text-center">Szczegoly</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "details all my-12 ">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          <h2 class="text-center">Szczegoly</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "pay all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          
+                          <h2 class="text-center">plac</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "pay all my-12">
+                        <div class = "post-img">
+                            <img src="./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                            
+                          <h2 class="text-center">plac</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "pay all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          <h2 class="text-center">plac</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "production all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          
+                          <h2 class="text-center">realizacja</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "production all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                         
+                          <h2 class="text-center">realizacja</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                    <!-- single post -->
+                    <div class = "production all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          <h2 class="text-center">realizacja</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of single post -->
+
+                        <!-- single post -->
+                        <div class = "recieve all my-12">
+                          <div class = "post-img">
+                              <img src = "./img/akwarium.webp" alt = "post">
+                          </div>
+  
+                          <div class = "post-content">
+                            <h2 class="text-center">odbior</h2>
+                          </div>
+                          <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                      </div>
+                      <!-- end of  post -->
+
+                      <!--  post -->
+                      <div class = "recieve all my-12">
+                        <div class = "post-img">
+                            <img src = "./img/akwarium.webp" alt = "post">
+                        </div>
+
+                        <div class = "post-content">
+                          <h2 class="text-center">odbior</h2>
+                        </div>
+                        <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                    </div>
+                    <!-- end of post -->
+
+                    <!--  post -->
+                  <div class = "recieve all my-12">
+                    <div class = "post-img">
+                        <img src = "./img/akwarium.webp" alt = "post">
+                    </div>
+                    <div class = "post-content">
+                      <h2 class="text-center">odbior</h2>
+                    </div>
+                    <a href="#contact-us"  class ="read-btn w-48">Skontaktuj się z Nami</a>
+                </div>
+                <!-- end of single post -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="video" class="relative flex items-center justify-center h-screen overflow-hidden">
+      <video
+      autoplay
+      loop
+      muted
+      class="absolute z-[-100] w-auto min-w-full min-h-full max-w-none"
+    >
+      <source
+        src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="relative z-10 p-5 text-6xl md:text-7xl text-[#ddd] bg-opacity-50 text-center rounded-xl">
+      Lorem<br />
+      ipsum inis. <br />
+      <img style="width: 25%;" class="flex py-6 mx-auto" src="./img/aquarium.png" alt="logo akwarium" draggable="false">
+        <a href="#contact-us" class="bg-blue-500 h-full hover:bg-blue-700 text-4xl text-white py-2 px-4 border border-blue-700 rounded">
+          Zapytaj eksperta
+        </a>
+
+      </div>
+  </div>
+    </section>
+
+    <section id="contact-us" class="md:pl-[5%] py-10 flex justify-center">
+      <div class="container-contact">
+        <div class="content-contact">
+          <div class="image-box">
+            <img class="mx-auto" src="./img/support.svg" draggable="false" alt="support">
+          </div>
+        <form action="#">
+          <div class="topic">Wyślij do Nas wiadomość</div>
+          <div class="input-box">
+            <input type="text" required>
+            <label>Imię</label>
+          </div>
+          <div class="input-box">
+            <input type="text" required>
+            <label class="z-[100]">E-mail</label>
+          </div>
+          <div class="input-box">
+            <input type="textarea" required>
+            <label class="z-[100]">Treść</label>
+          </div>
+          <div class="input-box">
+            <input type="submit" value="Wyślij">
+          </div>
+        </form>
+      </div>
+      </div>
+    </section>
+    </div>
+
+
+    <footer class="md:pl-32 mx-auto px-12 py-12  md:py-8 dark:bg-gray-900">
+      <div class="sm:flex sm:items-center sm:justify-between">
+      
+          <ul class="flex flex-col sm:flex-row items-center mb-6 text-sm text-white sm:mb-0">
+              <li>
+                  <a href="#" class="mr-4 hover:text-gray-500 duration-500 md:mr-6 ">O nas</a>
+              </li>
+              <li>
+                  <a href="#" class="mr-4 hover:text-gray-500 duration-500 md:mr-6">Nasze akwaria</a>
+              </li>
+              <li>
+                  <a href="#" class="mr-4 hover:text-gray-500 duration-500 md:mr-6 ">Kontakt</a>
+              </li>
+          </ul>
+          <a href="#" class="flex justify-center items-center mb-4 sm:mb-0">
+            <img src="./img/aquarium.png" class="h-8 mr-3" alt=" Logo" />
+            <span class="self-center text-2xl whitespace-nowrap text-white">Lorem ipsum</span>
+        </a>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <span class="block text-sm text-gray-500 sm:text-center "> 2023 Aquarium lorem All Rights Reserved.
+      </span>
+  </footer>
+    </div>
+  </div>
+
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>  
+<script src="https://cdn.tailwindcss.com" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+<script type="text/javascript" src="./vanilla-tilt.min.js"></script>
+<script src="sandbox.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".all"), {
+		max: 10,
+		speed: 200
+	});
+	VanillaTilt.init(document.querySelector(".swiper-slide-active.tranding-slide-img img"), {
+		max: 100,
+		speed: 200,
+	});
+
+
+	VanillaTilt.init(document.querySelectorAll(".all"));
+	VanillaTilt.init(document.querySelectorAll(".swiper-slide-active.tranding-slide-img img"));
+</script>
+
+</body>
+
+
+</html>
